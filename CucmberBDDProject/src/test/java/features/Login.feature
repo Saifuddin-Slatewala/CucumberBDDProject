@@ -12,6 +12,7 @@ When User enters valid email address <email>
 And User enters valid password <password>
 And User clicks on Login button
 Then User should be logged in successfully 
+# using examples for more than one data !!
 Examples:
 |email                |password |
 |szslatewalagmail.com |12345    |

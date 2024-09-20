@@ -1,5 +1,9 @@
-package tests;
+package stepdefinitions;
 
+
+import java.util.Map;
+
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -11,37 +15,52 @@ public class Register {
 		System.out.println(">> User navigats on registration page");
 	}
 	
-	@When("user enters firstname {string} in firstname field")
-	public void user_enters_firstname_in_firstname_field(String firstName) {
-	System.out.println("user entered firstname " +  firstName + " in firstname field");
+	@When("User enters below details")
+	public void User_enters_below_details(DataTable dataTable) {
+		
+		Map<String, String> map =  dataTable.asMap(String.class,String.class);
+		
+		System.out.println("User entered firstname as"+ map.get("firstname"));
+		System.out.println("User entered lastname as"+ map.get("lastname"));
+		System.out.println("User entered email address as"+ map.get("emailaddress"));
+		System.out.println("User entered telephone as"+ map.get("telephone"));
+		System.out.println("User entered password as"+ map.get("password"));
+		System.out.println("User entered confirm password as"+ map.get("confirmpassword"));
 	}
-	
-	@When("user enters lastname {string} in lastname field")
-	public void user_enters_lastname_in_lastname_field(String lastName) {
-		System.out.println("user entered lastname " +  lastName + " in lastname field");
-
-	}
-
-	@When("user enters email address {string} in email address field")
-	public void user_enters_email_address_in_email_address_field(String email) {
-		System.out.println("user entered email " +  email + " in email field");
-
-	}
-
-	@When("user enters telephone {string} in telephone field")
-	public void user_enters_telephone_in_telephone_field(String telephone) {
-		System.out.println("user entered telephone " +  telephone + " in telephone field");
-	}
-
-	@When("user enters password  {string} in password field")
-	public void user_enters_password_in_password_field(String password) {
-		System.out.println("user entered password " +  password + " in password field");
-	}
-
-	@When("user enters password confirm {string} in confirm password field")
-	public void user_enters_password_confirm_in_confirm_password_field(String confirmPassword) {
-		System.out.println("user entered confirm password " +  confirmPassword + " in confirm password field");
-	}
+	/*
+	 * @When("user enters firstname {string} in firstname field") public void
+	 * user_enters_firstname_in_firstname_field(String firstName) {
+	 * System.out.println("user entered firstname " + firstName +
+	 * " in firstname field"); }
+	 * 
+	 * @When("user enters lastname {string} in lastname field") public void
+	 * user_enters_lastname_in_lastname_field(String lastName) {
+	 * System.out.println("user entered lastname " + lastName +
+	 * " in lastname field");
+	 * 
+	 * }
+	 * 
+	 * @When("user enters email address {string} in email address field") public
+	 * void user_enters_email_address_in_email_address_field(String email) {
+	 * System.out.println("user entered email " + email + " in email field");
+	 * 
+	 * }
+	 * 
+	 * @When("user enters telephone {string} in telephone field") public void
+	 * user_enters_telephone_in_telephone_field(String telephone) {
+	 * System.out.println("user entered telephone " + telephone +
+	 * " in telephone field"); }
+	 * 
+	 * @When("user enters password  {string} in password field") public void
+	 * user_enters_password_in_password_field(String password) {
+	 * System.out.println("user entered password " + password +
+	 * " in password field"); }
+	 * 
+	 * @When("user enters password confirm {string} in confirm password field")
+	 * public void user_enters_password_confirm_in_confirm_password_field(String
+	 * confirmPassword) { System.out.println("user entered confirm password " +
+	 * confirmPassword + " in confirm password field"); }
+	 */
 
 	@When("user select on privacy field")
 	public void user_select_on_privacy_field() {

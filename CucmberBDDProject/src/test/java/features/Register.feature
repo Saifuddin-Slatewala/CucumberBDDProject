@@ -7,12 +7,14 @@ Given User is on registration page
 
 @Register @MandatoryFields @all @Smoke @Regression
 Scenario: Register with mandatory fields
-When user enters firstname "Saifuddin" in firstname field
-And user enters lastname "Slatewala" in lastname field
-And user enters email address "szslatewala@gmail.com" in email address field
-And user enters telephone "9081778252" in telephone field
-And user enters password  "12345" in password field
-And user enters password confirm "12345" in confirm password field
+# Using Data table for more than one fields!!
+When User enters below details
+|firstname	     | Saifuddin          |
+|lastname			   | Slatewala					|
+|emailaddress	 	 |szslatewla@gmail.com|
+|telephone			 |9081778252					|
+|password        |12345    						|
+|confirmpassword |12345     					|
 And user select on privacy field
 And user clicks on continue button
 Then user account should be created successfully  
@@ -20,12 +22,13 @@ Then user account should be created successfully
 @Register @AllFields @all @Smoke @Regression
 Scenario: Register with all fields
 
-When user enters firstname "Saifuddin" in firstname field
-And user enters lastname "Slatewala" in lastname field
-And user enters email address "szslatewala@gmail.com" in email address field
-And user enters telephone "9081778252" in telephone field
-And user enters password  "12345" in password field
-And user enters password confirm "12345" in confirm password field
+When User enters below details
+|firstname	     | Saifuddin          |
+|lastname			   | Slatewala					|
+|emailaddress	 |szslatewla@gmail.com|
+|telephone			 |9081778252					|
+|password        |12345    						|
+|confirmpassword|12345     					|
 And user select privacy field
 And user clicks on continue button
 And user select newsletter option
@@ -47,12 +50,13 @@ Then user account should not be created successfully and an error messages shoul
 @Register @DuplicateEmailField @all @Regression
 Scenario: Register with duplicate email address
 
-When user enters firstname "Saifuddin" in firstname field
-And user enters lastname "Slatewala" in lastname field
-And user enters email address "szslatewala@gmail.com" in email address field
-And user enters telephone "9081778252" in telephone field
-And user enters password  "12345" in password field
-And user enters password confirm "12345" in confirm password field
+When User enters below details
+|firstname	     | Saifuddin          |
+|lastname			   | Slatewala					|
+|emailaddress	 	 |szs@gmail.com|
+|telephone			 |9081778252					|
+|password        |12345    						|
+|confirmpassword|12345     					|
 And user select privacy field
 And user clicks on continue button
 And user select newsletter option
