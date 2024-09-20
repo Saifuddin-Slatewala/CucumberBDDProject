@@ -1,5 +1,7 @@
 # This is a Gherkin language written Feature File for Login Functionality
-
+# @dev -- Used when Functonality is still under development
+# @ignore -- When some scenario is to be ignored and not want to run
+# @wip (work in progress) -- Developer has developed but automated tests are remaining to be writen by tester
 Feature: User Login
 Registered User should be able to Login
 
