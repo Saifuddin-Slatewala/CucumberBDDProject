@@ -10,19 +10,6 @@ import io.cucumber.java.en.When;
 
 public class Login {
 	
-	// Tags in Runner Class and Tagged Hooks don't go together
-	//Using tagged hooks for Login
-	@Before("@Login")
-	public void open() {
-		System.out.println("Browser got Open");
-	}
-	
-	// Tags in Runner Class and Tagged Hooks don't go together
-	//Using tagged hooks for Login
-	@After("@Login")
-	public void close() {
-		System.out.println("Browser got Closed");
-	}
 	
 	@Given("User navigates to Login Page")
 	public void user_navigates_to_login_page() {
